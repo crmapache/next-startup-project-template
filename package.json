@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "create": "plop"
   },
   "dependencies": {
     "@types/node": "20.3.1",
@@ -21,6 +22,8 @@
     "typescript": "5.1.3"
   },
   "devDependencies": {
+    "inquirer-fuzzy-path": "^2.3.0",
+    "plop": "^3.1.2",
     "prettier": "^2.8.8"
   },
   "resolutions": {

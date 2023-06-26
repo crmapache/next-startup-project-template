@@ -1,0 +1,8 @@
+import { {{pascalCase name}}Container } from './{{pascalCase name}}.elements'
+{{#if types}}
+import { {{pascalCase name}}Props } from './{{pascalCase name}}.types'
+{{/if}}
+
+export const {{pascalCase name}} = ({{#if types}}{}: {{pascalCase name}}Props{{/if}}) => {
+  return <{{pascalCase name}}Container>{{pascalCase name}}</{{pascalCase name}}Container>
+}
