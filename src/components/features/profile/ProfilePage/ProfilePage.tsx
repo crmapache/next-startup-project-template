@@ -1,3 +1,9 @@
+import { ProfilePageContainer } from './ProfilePage.elements'
+
 export const ProfilePage = () => {
-  return <h1>Profile</h1>
+  return (
+    <ProfilePageContainer>
+      <h1>Profile</h1>
+    </ProfilePageContainer>
+  )
 }
