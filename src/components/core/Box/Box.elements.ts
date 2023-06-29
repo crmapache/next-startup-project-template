@@ -9,5 +9,6 @@ export const BoxElement = styled.div<{ $sx: any; $style: any }>`
   flex: 1 1 0;
   width: 100%;
 
-  ${({ $style }) => $style} ${({ $sx }) => $sx};
+  ${({ $style }) => $style};
+  ${({ $sx }) => $sx};
 `

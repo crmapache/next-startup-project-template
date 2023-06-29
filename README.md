@@ -9,3 +9,12 @@ This is a [Next.js](https://nextjs.org/) project template
 - plop files generator
 - eslint setup
 - aliases
+- Box component
+- Text component
+
+
+- Button component
+- Text highlight component
+- Radix UI
+- Redux
+- React Query

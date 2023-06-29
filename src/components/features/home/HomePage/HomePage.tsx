@@ -1,9 +1,13 @@
+import { Text } from '@core/Text'
+
 import { HomePageContainer } from './HomePage.elements'
 
 export const HomePage = () => {
   return (
     <HomePageContainer>
-      <h1>Home</h1>
+      <Text as="h1" variant="title">
+        Home
+      </Text>
     </HomePageContainer>
   )
 }

@@ -1,11 +1,13 @@
 import Link from 'next/link'
 
+import { GeneralNavigationContainer } from '@features/navigation/GeneralNavigation/GeneralNavigation.elements'
+
 export const GeneralNavigation = () => {
   return (
-    <nav style={{ display: 'flex', gap: '15px' }}>
+    <GeneralNavigationContainer>
       <Link href="/">Home</Link>
       <Link href="/profile">Profile</Link>
       <Link href="/profile/settings">Settings</Link>
-    </nav>
+    </GeneralNavigationContainer>
   )
 }

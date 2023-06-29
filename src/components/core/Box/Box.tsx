@@ -6,7 +6,7 @@ export const Box = ({ sx, as, children, ...rest }: BoxProps) => {
   const style = prepareStyles(rest)
 
   return (
-    <BoxElement $sx={sx} $style={style} as={as}>
+    <BoxElement as={as} $sx={sx} $style={style}>
       {children}
     </BoxElement>
   )
