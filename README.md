@@ -11,9 +11,11 @@ This is a [Next.js](https://nextjs.org/) project template
 - aliases
 - Box component
 - Text component
-
-
+- Style mixins
+- Loader component
 - Button component
+
+
 - Text highlight component
 - Radix UI
 - Redux
