@@ -18,5 +18,4 @@ This is a [Next.js](https://nextjs.org/) project template
 
 - Text highlight component
 - Radix UI
-- Redux
 - React Query
