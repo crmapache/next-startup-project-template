@@ -16,6 +16,6 @@ This is a [Next.js](https://nextjs.org/) project template
 - Button component
 - Text highlight component
 - React Query
-- 
 - Pre commit hooks
+- 
 - Radix UI
