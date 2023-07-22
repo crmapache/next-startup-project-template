@@ -3,12 +3,35 @@
 import { useState } from 'react'
 
 import { Box, Text, Button, Highlight } from '@core'
+import { useUsers, useSetUsersData } from '@queries'
 
 import { HomePageContainer } from './HomePage.elements'
 
 export const HomePage = () => {
+  const [canLoadUsers, setCanLoadUsers] = useState(false)
   const [disabled, setDisabled] = useState(false)
   const [loading, setLoading] = useState(false)
+
+  const { isLoading, data: users } = useUsers({
+    enabled: canLoadUsers,
+  })
+
+  const setUsersData = useSetUsersData()
+
+  const setNewUsersHandler = () => {
+    setUsersData([
+      {
+        id: 1,
+        name: 'Max Zolotoi',
+      },
+      {
+        id: 2,
+        name: 'Oleg Chernov',
+      },
+    ])
+  }
+
+  console.log('users >>', users)
 
   return (
     <HomePageContainer>
@@ -23,6 +46,32 @@ export const HomePage = () => {
         <Button onClick={() => setLoading(!loading)}>Toggle Loading</Button>
         <Button onClick={() => setDisabled(!disabled)}>Toggle Disabled</Button>
       </Box>
+
+      <Box mt={20} gap={10} flexDirection="row">
+        {!canLoadUsers && <Button onClick={() => setCanLoadUsers(true)}>Load users</Button>}
+        {canLoadUsers && <Button onClick={setNewUsersHandler}>Set users value</Button>}
+      </Box>
+
+      {canLoadUsers && (
+        <Box gap={16} maxWidth={600} margin="50px auto" flexDirection="row" flexWrap="wrap">
+          {!isLoading ? (
+            users?.map((user) => (
+              <Box
+                key={user.id}
+                p={10}
+                alignItems="center"
+                textAlign="center"
+                border="1px solid #222"
+                borderRadius={8}>
+                {user.name}
+              </Box>
+            ))
+          ) : (
+            <Box>Users Loading...</Box>
+          )}
+        </Box>
+      )}
+
       <Box mt={20}>
         <Text>
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error est incidunt laudantium

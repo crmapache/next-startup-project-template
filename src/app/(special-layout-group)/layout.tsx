@@ -1,4 +1,5 @@
 import { GeneralLayout } from '@features'
+import { MainProvider } from '@providers'
 import { RootLayoutProps } from '@types'
 
 export const metadata = {
@@ -7,5 +8,9 @@ export const metadata = {
 }
 
 export default function RootLayout({ children }: RootLayoutProps) {
-  return <GeneralLayout>{children}</GeneralLayout>
+  return (
+    <MainProvider>
+      <GeneralLayout>{children}</GeneralLayout>
+    </MainProvider>
+  )
 }
