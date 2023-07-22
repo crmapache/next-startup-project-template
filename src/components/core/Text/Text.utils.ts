@@ -16,7 +16,6 @@ export const prepareStyles = (styles: CSSProperties): CSSProperties => {
           result[aliasValue] = styles[styleKey as keyof CSSProperties]
         }
       } else {
-        // @ts-expect-error
         result[alias] = styles[styleKey as keyof CSSProperties]
       }
     } else {
