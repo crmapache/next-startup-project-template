@@ -11,7 +11,7 @@ export const stylesMap: Record<TextCustomStyleLiterals, CSSProp | CSSProp[]> = {
   mt: 'marginTop',
   mx: ['marginLeft', 'marginRight'],
   my: ['marginTop', 'marginBottom'],
-  p: 'margin',
+  p: 'padding',
   pb: 'paddingBottom',
   pl: 'paddingLeft',
   pr: 'paddingRight',
