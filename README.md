@@ -2,13 +2,13 @@ This is a [Next.js](https://nextjs.org/) project template
 
 ## Features
 
-- typescript
-- folders structure and example files
-- prettier
-- styled components
-- plop files generator
-- eslint setup
-- aliases
+- Typescript
+- Folders structure and example files
+- Prettier
+- Styled components
+- Plop files generator
+- Eslint setup
+- Aliases
 - Box component
 - Text component
 - Style mixins
@@ -16,6 +16,7 @@ This is a [Next.js](https://nextjs.org/) project template
 - Button component
 - Text highlight component
 - React Query
+- Query structure and example files
 - Pre commit hooks
 - 
 - Radix UI
