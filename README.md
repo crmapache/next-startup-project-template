@@ -14,8 +14,8 @@ This is a [Next.js](https://nextjs.org/) project template
 - Style mixins
 - Loader component
 - Button component
-
-
 - Text highlight component
+- 
 - Radix UI
 - React Query
+- Pre commit hooks
