@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "create": "plop",
+    "g": "plop",
     "postinstall": "husky install"
   },
   "dependencies": {

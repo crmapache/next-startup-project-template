@@ -4,6 +4,7 @@ import { useState } from 'react'
 
 import { Box, Text, Button, Highlight } from '@core'
 import { useUsers, useSetUsersData } from '@queries'
+import { Input } from '@core/Input'
 
 import { HomePageContainer } from './HomePage.elements'
 
@@ -11,6 +12,7 @@ export const HomePage = () => {
   const [canLoadUsers, setCanLoadUsers] = useState(false)
   const [disabled, setDisabled] = useState(false)
   const [loading, setLoading] = useState(false)
+  const [inputValue, setInputValue] = useState('')
 
   const { isLoading, data: users } = useUsers({
     enabled: canLoadUsers,
@@ -31,8 +33,6 @@ export const HomePage = () => {
     ])
   }
 
-  console.log('users >>', users)
-
   return (
     <HomePageContainer>
       <Text as="h1" variant="title">
@@ -50,6 +50,26 @@ export const HomePage = () => {
       <Box mt={20} gap={10} flexDirection="row">
         {!canLoadUsers && <Button onClick={() => setCanLoadUsers(true)}>Load users</Button>}
         {canLoadUsers && <Button onClick={setNewUsersHandler}>Set users value</Button>}
+      </Box>
+
+      <Box>
+        <Box flexDirection="column" mt={20} maxWidth={400}>
+          <Input
+            value={inputValue}
+            onChange={(value) => setInputValue(value)}
+            placeholder="Username"
+          />
+          <Input
+            value={inputValue}
+            onChange={(value) => setInputValue(value)}
+            placeholder="Username"
+          />
+          <Input
+            value={inputValue}
+            onChange={(value) => setInputValue(value)}
+            placeholder="Username"
+          />
+        </Box>
       </Box>
 
       {canLoadUsers && (

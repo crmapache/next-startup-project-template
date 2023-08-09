@@ -18,5 +18,4 @@ This is a [Next.js](https://nextjs.org/) project template
 - React Query
 - Query structure and example files
 - Pre commit hooks
-- 
-- Radix UI
+- Input component
