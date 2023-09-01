@@ -2,10 +2,12 @@
 
 import { useState } from 'react'
 
-import { Box, Text, Button, Highlight } from '@core'
+import { Box, Text, Image, Button, Highlight } from '@core'
 import { useUsers, useSetUsersData } from '@queries'
 import { Input } from '@core/Input'
 
+import art1 from './1.png'
+import art2 from './2.png'
 import { HomePageContainer } from './HomePage.elements'
 
 export const HomePage = () => {
@@ -106,6 +108,10 @@ export const HomePage = () => {
           necessitatibus odit quis quo quod saepe sequi sunt suscipit tempora ullam vero voluptate!
         </Text>
       </Box>
+
+      <div style={{ marginTop: 200 }}>
+        <Image src={art1.src} width={art1.width} height={art1.height} fill />
+      </div>
     </HomePageContainer>
   )
 }

@@ -1,3 +1,1 @@
-export type SimpleLinkProps = {
-
-}
+export type SimpleLinkProps = {}
