@@ -19,3 +19,4 @@ This is a [Next.js](https://nextjs.org/) project template
 - Query structure and example files
 - Pre commit hooks
 - Input component
+- Image component

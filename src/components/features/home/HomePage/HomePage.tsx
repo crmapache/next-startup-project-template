@@ -2,12 +2,10 @@
 
 import { useState } from 'react'
 
-import { Box, Text, Image, Button, Highlight } from '@core'
+import { Box, Text, Button, Highlight } from '@core'
 import { useUsers, useSetUsersData } from '@queries'
 import { Input } from '@core/Input'
 
-import art1 from './1.png'
-import art2 from './2.png'
 import { HomePageContainer } from './HomePage.elements'
 
 export const HomePage = () => {
