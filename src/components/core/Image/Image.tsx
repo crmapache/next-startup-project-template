@@ -6,7 +6,7 @@ import NextImage from 'next/image'
 import { ImageContainer } from './Image.elements'
 import { ImageProps } from './Image.types'
 
-export const Image = ({ src, width, height, fill, alt = '' }: ImageProps) => {
+export const Image = ({ src, width, height, fill, alt = '', ...rest }: ImageProps) => {
   const containerRef = useRef<HTMLDivElement>(null)
 
   const [innerWidth, setInnerWidth] = useState<string | number>(0)
@@ -31,6 +31,8 @@ export const Image = ({ src, width, height, fill, alt = '' }: ImageProps) => {
       setInnerWidth('100%')
       setMaxWidth(width)
 
+      setTimeout(setHeight, 100)
+
       window.addEventListener('resize', setHeight)
     }
 
@@ -44,7 +46,8 @@ export const Image = ({ src, width, height, fill, alt = '' }: ImageProps) => {
   return (
     <ImageContainer
       ref={containerRef}
-      style={{ width: innerWidth, maxWidth: maxWidth, height: innerHeight }}>
+      style={{ width: innerWidth, maxWidth: maxWidth, height: innerHeight }}
+      {...rest}>
       <NextImage src={src} fill alt={alt} onLoad={setHeight} />
     </ImageContainer>
   )

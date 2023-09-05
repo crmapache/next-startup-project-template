@@ -3961,10 +3961,10 @@ prelude-ls@^1.2.1:
   resolved "https://registry.yarnpkg.com/prelude-ls/-/prelude-ls-1.2.1.tgz#debc6489d7a6e6b0e7611888cec880337d316396"
   integrity sha512-vkcDPrRZo1QZLbn5RLGPpg/WmIQ65qoWWhcGKf/b5eplkkarX0m9z8ppCat4mlOqUsWpyNuYgO3VRyrYHSzX5g==
 
-prettier-plugin-sort-react-imports@^0.3.0:
-  version "0.3.0"
-  resolved "https://registry.yarnpkg.com/prettier-plugin-sort-react-imports/-/prettier-plugin-sort-react-imports-0.3.0.tgz#5370554bfe24468533b1ffeef253f19b5c3dff1b"
-  integrity sha512-QPHb4ny3y46BAVCiiVX8iqKkwOALGFK98REtgB2LqpggPqreOlq9uZb3V8me5emeWhVupbbB+J1OBqpjjCkCZQ==
+prettier-plugin-sort-react-imports@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/prettier-plugin-sort-react-imports/-/prettier-plugin-sort-react-imports-0.5.0.tgz#e0ad63254759984003bad7fb2f8fa3dd04146fcc"
+  integrity sha512-JLvo8xdxbQwIxeVPlRKR9jLMQCIUs+cKMyCpGe1rxHWoJI77mv0xqMOpflDeXJFd26VfPBcW0aYEUwjEbD3hxw==
 
 prettier@^2.8.8:
   version "2.8.8"

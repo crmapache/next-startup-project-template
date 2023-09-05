@@ -108,10 +108,6 @@ export const HomePage = () => {
           necessitatibus odit quis quo quod saepe sequi sunt suscipit tempora ullam vero voluptate!
         </Text>
       </Box>
-
-      <div style={{ marginTop: 200 }}>
-        <Image src={art1.src} width={art1.width} height={art1.height} fill />
-      </div>
     </HomePageContainer>
   )
 }
