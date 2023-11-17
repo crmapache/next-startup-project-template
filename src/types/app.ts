@@ -7,6 +7,8 @@ export type RootLayoutProps = {
   children: ReactNode
 }
 
+export type TextVariantLiterals = 'body' | 'title'
+
 export type TextVariant = {
   fontFamily: CSSProperties['fontFamily']
   fontWeight: CSSProperties['fontWeight']

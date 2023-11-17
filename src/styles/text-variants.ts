@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react'
 
-import { TextVariant } from '@types'
+import { TextVariant, TextVariantLiterals } from '@types'
 
 const commonVariantStyles = {
   fontFamily: '"Roboto", sans-serif;',
@@ -9,7 +9,7 @@ const commonVariantStyles = {
   letterSpacing: 'normal',
 }
 
-export const textVariants: Record<string, TextVariant> = {
+export const textVariants: Record<TextVariantLiterals, TextVariant> = {
   body: {
     ...commonVariantStyles,
     fontSize: '16px',

@@ -18,4 +18,10 @@ export const stylesMap: Record<CustomStyleLiterals, CSSProp | CSSProp[]> = {
   pt: 'paddingTop',
   px: ['paddingLeft', 'paddingRight'],
   py: ['paddingTop', 'paddingBottom'],
+  h: 'height',
+  mh: 'minHeight',
+  mxh: 'maxHeight',
+  w: 'width',
+  mw: 'minWidth',
+  mxw: 'maxWidth',
 }
