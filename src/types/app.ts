@@ -1,22 +1,14 @@
-import { ReactNode, CSSProperties } from 'react'
+import { ReactNode } from 'react'
 import { RuleSet } from 'styled-components'
 
+import { textVariants } from '@styles/text-variants'
 import { LoaderSize } from '@core/Loader/Loader.types'
 
 export type RootLayoutProps = {
   children: ReactNode
 }
 
-export type TextVariantLiterals = 'body' | 'title'
-
-export type TextVariant = {
-  fontFamily: CSSProperties['fontFamily']
-  fontWeight: CSSProperties['fontWeight']
-  fontSize: CSSProperties['fontSize']
-  lineHeight: CSSProperties['lineHeight']
-  letterSpacing: CSSProperties['letterSpacing']
-  textTransform: CSSProperties['textTransform']
-}
+export type TextVariantLiterals = keyof typeof textVariants
 
 export type ButtonVariant = (disabled: boolean) => {
   styles: RuleSet

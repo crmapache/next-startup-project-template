@@ -1,24 +1,32 @@
-import { CSSProperties } from 'react'
+'use client'
 
-import { TextVariant, TextVariantLiterals } from '@types'
+import { css } from 'styled-components'
+import { Interpolation } from 'styled-components/dist/types'
 
-const commonVariantStyles = {
-  fontFamily: '"Roboto", sans-serif;',
-  fontWeight: '400',
-  textTransform: 'none' as CSSProperties['textTransform'],
-  letterSpacing: 'normal',
-}
+const commonVariantStyles = css`
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: normal;
+  transition: all 0.2s;
+  color: #2f2f2f;
+`
 
-export const textVariants: Record<TextVariantLiterals, TextVariant> = {
-  body: {
-    ...commonVariantStyles,
-    fontSize: '16px',
-    lineHeight: '20px',
-  },
-  title: {
-    ...commonVariantStyles,
-    fontSize: '20px',
-    lineHeight: '24px',
-    fontWeight: '700',
-  },
+export const textVariants: Record<string, Interpolation<object>[]> = {
+  title: css`
+    ${commonVariantStyles};
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 700;
+
+    @media (max-width: 1440px) {
+      font-size: 18px;
+      line-height: 22px;
+    }
+  `,
+  body: css`
+    ${commonVariantStyles};
+    font-size: 16px;
+    line-height: 20px;
+  `,
 }

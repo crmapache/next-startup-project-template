@@ -1,4 +1,3 @@
-export * from './Box'
 export * from './Text'
 export * from './Highlight'
 export * from './Loader'
