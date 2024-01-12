@@ -1,5 +1,2 @@
 export * from './home'
 export * from './layout'
-export * from './navigation'
-export * from './profile'
-export * from './settings'

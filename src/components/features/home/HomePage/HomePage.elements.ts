@@ -8,4 +8,5 @@ export const HomePageContainer = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  gap: 30px;
 `

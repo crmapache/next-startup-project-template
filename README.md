@@ -9,8 +9,7 @@ This is a [Next.js](https://nextjs.org/) project template
 - Plop files generator
 - Eslint setup
 - Aliases
-- Box component
-- Text component
+- Typography component
 - Style mixins
 - Loader component
 - Button component
@@ -19,4 +18,4 @@ This is a [Next.js](https://nextjs.org/) project template
 - Query structure and example files
 - Pre commit hooks
 - Input component
-- Image component
+- Responsive Next Image component

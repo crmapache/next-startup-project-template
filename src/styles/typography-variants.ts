@@ -12,7 +12,7 @@ const commonVariantStyles = css`
   color: #2f2f2f;
 `
 
-export const textVariants: Record<string, Interpolation<object>[]> = {
+export const typographyVariants: Record<string, Interpolation<object>[]> = {
   title: css`
     ${commonVariantStyles};
     font-size: 20px;
