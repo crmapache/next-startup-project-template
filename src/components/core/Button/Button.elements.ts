@@ -2,8 +2,6 @@
 
 import styled, { css, RuleSet } from 'styled-components'
 
-import { mixins } from '@styles/mixins'
-
 export const ButtonContainer = styled.button<{
   $variantStyles: RuleSet
   $loading: boolean
@@ -46,8 +44,13 @@ export const Content = styled.div<{ $loading: boolean }>`
 `
 
 export const LoaderContainer = styled.div<{ $loading: boolean }>`
-  ${mixins.flex.center};
-  ${mixins.absolute.center};
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
   opacity: ${({ $loading }) => ($loading ? 1 : 0)};
 `
