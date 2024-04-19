@@ -1,9 +1,10 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useContext } from 'react'
 import Link from 'next/link'
 
-import { Loader } from '@core/Loader'
+import { Loader } from '@core'
+import { ThemeContext } from '@providers'
 import { buttonVariants } from '@styles/button-variants'
 
 import { Content, ButtonContainer, LoaderContainer } from './Button.elements'
@@ -12,23 +13,16 @@ import { ButtonProps } from './Button.types'
 export const Button = ({
   children,
   href,
-  variant = 'primaryMedium',
+  variant = 'primary',
   loading = false,
   ...rest
 }: ButtonProps) => {
-  const {
-    styles: variantStyles,
-    loader: loaderProps,
-    disabledLoader: disabledLoaderProps,
-  } = buttonVariants[variant](!!rest.disabled)
+  const { theme } = useContext(ThemeContext)
 
-  const loaderMergedProps = useMemo(() => {
-    if (rest.disabled) {
-      return Object.assign({}, loaderProps, disabledLoaderProps)
-    }
-
-    return Object.assign({}, loaderProps)
-  }, [rest.disabled, loaderProps, disabledLoaderProps])
+  const { styles: variantStyles, loader: loaderProps } = buttonVariants[variant]({
+    disabled: !!rest.disabled,
+    theme,
+  })
 
   return (
     <ButtonContainer
@@ -42,7 +36,7 @@ export const Button = ({
       <Content $loading={loading}>{children}</Content>
       {loading && (
         <LoaderContainer $loading={loading}>
-          <Loader {...loaderMergedProps} />
+          <Loader {...loaderProps} />
         </LoaderContainer>
       )}
     </ButtonContainer>

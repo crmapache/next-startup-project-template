@@ -9,7 +9,7 @@ const commonVariantStyles = css`
   text-transform: none;
   letter-spacing: normal;
   transition: all 0.2s;
-  color: #2f2f2f;
+  color: ${({ theme }) => theme.text.primary};
 `
 
 export const typographyVariants: Record<string, Interpolation<object>[]> = {

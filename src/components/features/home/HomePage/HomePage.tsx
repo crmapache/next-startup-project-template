@@ -1,20 +1,29 @@
 'use client'
 
-import nextImage from '@assets/next-responsive-image.jpg'
+import { useContext } from 'react'
 
-import { Typography } from '@core'
-import { ResponsiveImage } from '@core/ResponsiveImage'
+import { Button, Typography } from '@core'
+import { ThemeContext } from '@providers'
 
-import { HomePageContainer } from './HomePage.elements'
+import { ButtonsContainer, HomePageContainer, LocaleButtonsContainer } from './HomePage.elements'
 
 export const HomePage = () => {
+  const { toggleTheme } = useContext(ThemeContext)
+
   return (
     <HomePageContainer>
       <Typography as="h1" variant="title">
-        Home
+        Next Startup Project Template
       </Typography>
 
-      <ResponsiveImage src={nextImage.src} />
+      <ButtonsContainer>
+        <Button onClick={toggleTheme}>Toggle Theme</Button>
+
+        <LocaleButtonsContainer>
+          <Button variant="primary">ES</Button>
+          <Button variant="secondary">EN</Button>
+        </LocaleButtonsContainer>
+      </ButtonsContainer>
     </HomePageContainer>
   )
 }

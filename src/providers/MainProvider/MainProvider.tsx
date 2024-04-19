@@ -1,10 +1,8 @@
 'use client'
 
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { ThemeProvider } from 'styled-components'
 
-import { theme } from '@styles/theme'
-
+import { ThemeProvider } from '../ThemeProvider'
 import { MainProviderProps } from './MainProvider.types'
 
 export const MainProvider = ({ children }: MainProviderProps) => {
@@ -12,7 +10,7 @@ export const MainProvider = ({ children }: MainProviderProps) => {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <ThemeProvider theme={theme}>{children}</ThemeProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </QueryClientProvider>
   )
 }
