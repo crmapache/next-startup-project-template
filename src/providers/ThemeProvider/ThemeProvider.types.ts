@@ -1,5 +1,5 @@
 import { ReactNode } from 'react'
 
-export type ThemeProviderProp = {
+export type ThemeProviderProps = {
   children: ReactNode
 }

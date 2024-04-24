@@ -6,14 +6,14 @@ import { ThemeProvider as StyledComponentsThemeProvider } from 'styled-component
 import { Theme } from '@types'
 import { themeDark, themeLight } from '@styles/theme'
 
-import { ThemeProviderProp } from './ThemeProvider.types'
+import { ThemeProviderProps } from './ThemeProvider.types'
 
 export const ThemeContext = createContext({
   theme: themeLight,
   toggleTheme: () => {},
 })
 
-export const ThemeProvider = ({ children }: ThemeProviderProp) => {
+export const ThemeProvider = ({ children }: ThemeProviderProps) => {
   const [themeMode, setThemeMode] = useState('light')
 
   const toggleTheme = () => {

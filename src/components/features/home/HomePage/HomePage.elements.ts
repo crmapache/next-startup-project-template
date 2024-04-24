@@ -19,8 +19,3 @@ export const ButtonsContainer = styled.div`
   flex-direction: column;
   gap: 10px;
 `
-
-export const LocaleButtonsContainer = styled.div`
-  display: flex;
-  gap: 10px;
-`

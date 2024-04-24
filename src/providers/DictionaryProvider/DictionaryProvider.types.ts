@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-export type MainProviderProps = {
+export type DictionaryProviderProps = {
   children: ReactNode
   dictionary: any
 }

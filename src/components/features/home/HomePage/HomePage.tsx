@@ -1,28 +1,28 @@
 'use client'
 
 import { useContext } from 'react'
+import { LocaleSwitcher } from '@shared'
 
 import { Button, Typography } from '@core'
+import { useDictionary } from '@hooks'
 import { ThemeContext } from '@providers'
 
-import { ButtonsContainer, HomePageContainer, LocaleButtonsContainer } from './HomePage.elements'
+import { ButtonsContainer, HomePageContainer } from './HomePage.elements'
 
 export const HomePage = () => {
   const { toggleTheme } = useContext(ThemeContext)
+  const d = useDictionary('Home')
 
   return (
     <HomePageContainer>
       <Typography as="h1" variant="title">
-        Next Startup Project Template
+        {d.title}
       </Typography>
 
       <ButtonsContainer>
-        <Button onClick={toggleTheme}>Toggle Theme</Button>
+        <Button onClick={toggleTheme}>{d.toggleThemeButton}</Button>
 
-        <LocaleButtonsContainer>
-          <Button variant="primary">ES</Button>
-          <Button variant="secondary">EN</Button>
-        </LocaleButtonsContainer>
+        <LocaleSwitcher />
       </ButtonsContainer>
     </HomePageContainer>
   )
