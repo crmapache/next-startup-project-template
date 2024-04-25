@@ -7,7 +7,7 @@ import { Locale } from '../../i18n.config'
 export type RootLayoutProps = {
   children: ReactNode
   params: {
-    lang: Locale
+    locale: Locale
   }
 }
 

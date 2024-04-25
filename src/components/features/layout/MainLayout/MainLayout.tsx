@@ -1,3 +1,5 @@
+import { useMessages, NextIntlClientProvider } from 'next-intl'
+
 import { RootLayoutProps } from '@types'
 import StyledComponentsRegistry from '@lib/registry'
 
@@ -9,11 +11,15 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }
 
-export const MainLayout = ({ children, params: { lang } }: RootLayoutProps) => {
+export const MainLayout = ({ children, params: { locale } }: RootLayoutProps) => {
+  const messages = useMessages()
+
   return (
-    <html lang={lang}>
+    <html lang={locale}>
       <body>
-        <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        <NextIntlClientProvider messages={messages}>
+          <StyledComponentsRegistry>{children}</StyledComponentsRegistry>
+        </NextIntlClientProvider>
       </body>
     </html>
   )

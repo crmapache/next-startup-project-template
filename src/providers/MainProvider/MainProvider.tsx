@@ -2,18 +2,15 @@
 
 import { QueryClient, QueryClientProvider } from 'react-query'
 
-import { DictionaryProvider } from '../DictionaryProvider'
 import { ThemeProvider } from '../ThemeProvider'
 import { MainProviderProps } from './MainProvider.types'
 
-export const MainProvider = ({ children, dictionary }: MainProviderProps) => {
+export const MainProvider = ({ children }: MainProviderProps) => {
   const queryClient = new QueryClient()
 
   return (
     <QueryClientProvider client={queryClient}>
-      <DictionaryProvider dictionary={dictionary}>
-        <ThemeProvider>{children}</ThemeProvider>
-      </DictionaryProvider>
+      <ThemeProvider>{children}</ThemeProvider>
     </QueryClientProvider>
   )
 }
