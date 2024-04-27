@@ -19,3 +19,4 @@ This is a [Next.js](https://nextjs.org/) project template
 - Pre commit hooks
 - Input component
 - Responsive Next Image component
+- i18n
