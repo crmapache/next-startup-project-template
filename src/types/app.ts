@@ -2,7 +2,7 @@ import { ReactNode } from 'react'
 
 import { typographyVariants } from '@styles/typography-variants'
 
-import { Locale } from '../../i18n.config'
+import { Locale } from '../i18n'
 
 export type RootLayoutProps = {
   children: ReactNode

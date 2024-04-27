@@ -22,6 +22,7 @@ export type ButtonVariant = ({ disabled, theme }: ButtonVariantProps) => {
 
 export type ButtonProps = {
   children: ReactNode | string | number
+  locale?: string
   variant?: ButtonVariantLiterals
   loading?: boolean
 } & ButtonHTMLAttributes<HTMLButtonElement> &

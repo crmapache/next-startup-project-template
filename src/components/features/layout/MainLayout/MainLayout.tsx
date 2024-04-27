@@ -3,12 +3,12 @@ import { useMessages, NextIntlClientProvider } from 'next-intl'
 import { RootLayoutProps } from '@types'
 import StyledComponentsRegistry from '@lib/registry'
 
-import { i18n } from '../../../../../i18n.config'
+import { locales } from '../../../../i18n'
 
 import '@styles/globals.css'
 
 export async function generateStaticParams() {
-  return i18n.locales.map((locale) => ({ lang: locale }))
+  return locales.map((locale) => ({ lang: locale }))
 }
 
 export const MainLayout = ({ children, params: { locale } }: RootLayoutProps) => {

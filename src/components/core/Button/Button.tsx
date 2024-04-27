@@ -1,12 +1,12 @@
 'use client'
 
 import { useContext } from 'react'
-import Link from 'next/link'
 
 import { Loader } from '@core'
 import { ThemeContext } from '@providers'
 import { buttonVariants } from '@styles/button-variants'
 
+import { Link } from '../Link'
 import { Content, ButtonContainer, LoaderContainer } from './Button.elements'
 import { ButtonProps } from './Button.types'
 

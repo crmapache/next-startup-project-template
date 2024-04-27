@@ -1,11 +1,14 @@
-import NextLink from 'next/link'
+import { createSharedPathnamesNavigation } from 'next-intl/navigation'
 
-import { i18n } from '../../../../i18n.config'
+import { locales } from '../../../i18n'
 import { LinkProps } from './Link.types'
 
-export const Link = ({ href, lang, ...props }: LinkProps) => {
-  const isDefaultLang = lang === i18n.defaultLocale
-  const path = isDefaultLang ? href : `/${lang}${href}`
+export const Link = ({ locale, children, ...props }: LinkProps) => {
+  const { Link: NextLink } = createSharedPathnamesNavigation({ locales })
 
-  return <NextLink href={path} {...props} />
+  return (
+    <NextLink {...props} locale={locale}>
+      {children}
+    </NextLink>
+  )
 }

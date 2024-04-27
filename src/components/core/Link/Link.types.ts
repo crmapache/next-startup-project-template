@@ -1,8 +1,7 @@
+import { LinkProps as NextLinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
 export type LinkProps = {
-  href: string
-  lang: string
   children: ReactNode
-  [key: string]: any
-}
+  locale?: string
+} & NextLinkProps
