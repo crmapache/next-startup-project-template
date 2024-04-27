@@ -1,7 +1,7 @@
 import { getRequestConfig } from 'next-intl/server'
 import { notFound } from 'next/navigation'
 
-export const locales = ['en', 'es']
+export const locales = ['en', 'es'] // Don't forget to add new locales in middleware.ts
 export const defaultLocale = 'es'
 
 export type Locale = (typeof locales)[number]
