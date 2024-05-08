@@ -1,5 +1,9 @@
 {
   "Home": {
+    "metadata": {
+      "title": "Home ( ES )",
+      "description": "home ( ES )"
+    },
     "title": "Next Startup Project Template ( ES )",
     "toggle-theme-button": "Cambiar Tema"
   }

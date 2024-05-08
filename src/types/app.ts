@@ -12,3 +12,5 @@ export type RootLayoutProps = {
 }
 
 export type TypographyVariantLiterals = keyof typeof typographyVariants
+
+export type GenerateMetadataProps = Pick<RootLayoutProps, 'params'>
