@@ -1,3 +1,5 @@
+const fs = require('fs')
+
 module.exports = function (plop) {
   plop.setHelper('ifIncludes', (arg1, arg2, options) => {
     return arg1.includes(arg2) ? options.fn(this) : options.inverse(this)
@@ -12,7 +14,7 @@ module.exports = function (plop) {
       .replace(/\w+/g, '..')
   })
 
-  plop.setPrompt('directory', require('inquirer-fuzzy-path'), { rootPath: 'src' })
+  plop.setPrompt('directory', require('inquirer-fuzzy-path'), { rootPath: 'src/components' })
 
   plop.setGenerator('component', {
     description: 'Create a component',
@@ -22,9 +24,15 @@ module.exports = function (plop) {
         name: 'path',
         message: 'Search a target directory for your component: ',
         itemType: 'directory',
-        rootPath: 'src',
+        rootPath: 'src/components',
         excludePath: (nodePath) => nodePath.includes('node_modules'),
-        excludeFilter: (nodePath) => nodePath.includes('coverage') || nodePath.startsWith('.'),
+        excludeFilter: (nodePath) => {
+          return (
+            nodePath.includes('coverage') ||
+            nodePath === 'src/components' ||
+            nodePath.startsWith('.')
+          )
+        },
         transformer: (path) => path.split('/').slice(0, 5).join('/'),
       },
       {
@@ -74,6 +82,30 @@ module.exports = function (plop) {
         type: 'add',
         path: '{{path}}/{{pascalCase name}}/{{pascalCase name}}.elements.ts',
         templateFile: 'plop-templates/component/Component.elements.ts.hbs',
+        skipIfExists: true,
+      },
+      {
+        type: 'modify',
+        path: '{{path}}/index.ts',
+        transform: (fileContents, data) => {
+          const exportStatement = `export * from './${data.name}'\n`
+
+          if (!fileContents.includes(exportStatement)) {
+            return fileContents + exportStatement
+          }
+
+          return fileContents
+        },
+        skip: ({ path }) => {
+          if (!fs.existsSync(`${path}/index.ts`)) {
+            return `index.ts file not found, creating...`
+          }
+        },
+      },
+      {
+        type: 'add',
+        path: '{{path}}/index.ts',
+        template: `export * from './{{pascalCase name}}'\n`,
         skipIfExists: true,
       },
     ],
